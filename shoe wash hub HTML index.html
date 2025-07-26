@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blez's Shoe Scrubber</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial, sans-serif; background: #012622; margin: 0; }
+    header { background: #222; color: #fff; padding: 2rem 1rem; text-align: center; }
+    nav ul { display: flex; justify-content: center; list-style: none; padding: 0; margin: 0; background: #333; }
+    nav li { margin: 0 1rem; }
+    nav a { color: #fff; text-decoration: none; padding: 1rem; display: block; }
+    .card { background: #fff; margin: 2rem auto; max-width: 600px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; }
+    .dropdown-header { cursor: pointer; padding: 1.2rem; background: #eee; font-size: 1.2rem; border-bottom: 1px solid #ddd; transition: background 0.2s; }
+    .dropdown-header:hover { background: #ddd; }
+    .dropdown-content { display: none; padding: 1.2rem; }
+    .active .dropdown-content { display: block; }
+    footer { text-align: center; padding: 1rem; background: #222; color: #fff; margin-top: 2rem; }
+    button { background: #222; color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #444; }
+    form input, form select, form textarea { width: 100%; margin-bottom: 1rem; padding: 0.5rem; border-radius: 5px; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Blez's Shoe Scrubber</h1>
+    <h2>Your Shoes Deserve the Best Care</h2>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#who-we-are">Who We Are</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#why-choose-us">Why Choose Us</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+    </ul>
+  </nav>
+
+  <div class="card" id="who-we-are">
+    <div class="dropdown-header" onclick="toggleDropdown(this)">Who We Are</div>
+    <div class="dropdown-content">
+      <p>We are a dedicated team of shoe cleaning experts, passionate about restoring your footwear to its original glory. With years of experience, we specialize in cleaning all types of shoes, from sneakers to leather boots.</p>
+      <p>Our mission is to provide top-notch shoe cleaning services that not only enhance the appearance of your shoes but also extend their lifespan. We use eco-friendly products and techniques to ensure your shoes are cleaned safely and effectively.</p>
+      <p>At Shoe Wash Hub, we believe that every pair of shoes deserves the best care. Whether you have a favorite pair of sneakers or a cherished pair of leather boots, we treat each shoe with the utmost care and attention to detail.</p>
+      <p>Join us in our journey to keep your shoes looking their best. Experience the difference with Shoe Wash Hub, where quality meets care.</p>
+    </div>
+  </div>
+
+  <div class="card" id="services">
+    <div class="dropdown-header" onclick="toggleDropdown(this)">Services Offered</div>
+    <div class="dropdown-content">
+      <p>We offer a wide range of shoe cleaning services including:</p>
+      <ul>
+        <li>Sneaker Cleaning</li>
+        <li>Leather Boot Restoration</li>
+        <li>Suede Shoe Care</li>
+        <li>Stain Removal</li>
+        <li>Waterproofing Treatments</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" id="how-it-works">
+    <div class="dropdown-header" onclick="toggleDropdown(this)">How It Works</div>
+    <div class="dropdown-content">
+      <p>Our process is simple and efficient:</p>
+      <ol>
+        <li>Drop off your shoes at our location or schedule a pickup.</li>
+        <li>We assess the condition of your shoes and recommend the best cleaning method.</li>
+        <li>Your shoes are cleaned using our eco-friendly products.</li>
+        <li>We notify you when your shoes are ready for pickup or delivery.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card" id="why-choose-us">
+    <div class="dropdown-header" onclick="toggleDropdown(this)">Why Choose Us?</div>
+    <div class="dropdown-content">
+      <p>Here are a few reasons why Shoe Wash Hub stands out:</p>
+      <ul>
+        <li>Experienced professionals</li>
+        <li>Eco-friendly cleaning products</li>
+        <li>Affordable pricing</li>
+        <li>Quick turnaround time</li>
+        <li>Customer satisfaction guarantee</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" id="pricing">
+    <div class="dropdown-header" onclick="toggleDropdown(this)">Pricing</div>
+    <div class="dropdown-content">
+      <ul>
+        <li>Sneaker Cleaning: R100 <button onclick="addToCart('Sneaker Cleaning', 100)">Add</button></li>
+        <li>Leather Boot Restoration: R150 <button onclick="addToCart('Leather Boot Restoration', 150)">Add</button></li>
+        <li>Suede Shoe Care: R200 <button onclick="addToCart('Suede Shoe Care', 200)">Add</button></li>
+        <li>Stain Removal: R100 <button onclick="addToCart('Stain Removal', 100)">Add</button></li>
+        <li>Waterproofing: R150 <button onclick="addToCart('Waterproofing', 150)">Add</button></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" id="testimonials">
+    <div class="dropdown-header" onclick="toggleDropdown(this)">Testimonials</div>
+    <div class="dropdown-content">
+      <p>"Shoe Wash Hub did an amazing job on my sneakers! They look brand new!" - Jane D.</p>
+      <p>"I was impressed with their leather boot restoration service. Highly recommend!" - John S.</p>
+    </div>
+  </div>
+
+  <div class="card" id="booking">
+    <div class="dropdown-header" onclick="toggleDropdown(this)">Book a Cleaning</div>
+    <div class="dropdown-content">
+      <form id="booking-form" onsubmit="return validateForm()">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <select id="service" required>
+          <option value="">Select a Service</option>
+          <option value="Sneaker Cleaning">Sneaker Cleaning</option>
+          <option value="Leather Boot Restoration">Leather Boot Restoration</option>
+          <option value="Suede Shoe Care">Suede Shoe Care</option>
+          <option value="Stain Removal">Stain Removal</option>
+          <option value="Waterproofing">Waterproofing</option>
+        </select>
+        <textarea id="notes" placeholder="Additional Notes (optional)"></textarea>
+        <button type="submit">Submit Booking</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2024 Blez's Shoe Scrubber. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleDropdown(header) {
+      // Close all cards
+      document.querySelectorAll('.card').forEach(card => card.classList.remove('active'));
+      // Open the clicked card
+      header.parentElement.classList.add('active');
+    }
+    // Optionally, open the first card by default
+    document.querySelector('.card').classList.add('active');
+  </script>
+</body>
+</html>
